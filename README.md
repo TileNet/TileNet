@@ -17,9 +17,9 @@ Table of Contents
 
 TileNet gets its name from a mathematical concept called [Tessellation](https://en.wikipedia.org/wiki/Tessellation), which tiles geometric shapes periodically to form specific patterns. The self-resemblance in nature is embodied in the network architecture, as shown in the picture below. The initial motive of designing this architecture is drawn by the insight of specific tasks, like numeral system conversion or bubble sorting,  which practically divides the original problem of `size N` into a smaller one of `size N-1` and a trivial one of `size 1`, and then conquers them.  
 
-To explain the architecture, let's take a 16-to-10 numeral system conversion problem as an example. We have a training example: *100*(Dec) and *64*(Hex). We use *X_i* to denote the source number, *100*, that means, *X_0* for *1*, *X_1* for *2*, and *X_2* for *3*. And we use *Y_i* to denote the target number, *64*, that means, *Y_0* for *6* ad *Y_1* for *4*. In this task, our padding token(*PAD*) is the `invariant number` *0*. 
+To explain the architecture, let's take a 10-to-16 numeral system conversion problem as an example. We have a training example: *100*(Dec) and *64*(Hex). We use *X_i* to denote the source number, *100*, that means, *X_0* for *1*, *X_1* for *0*, and *X_2* for *0*. And we use *Y_i* to denote the target number, *64*, that means, *Y_0* for *6* ad *Y_1* for *4*. Note that we use padding token(*PAD*) to mark the initial condition and the terminal condition, which actually acts like the [Identity Element](https://en.wikipedia.org/wiki/Identity_element) in algebraic terms.
 
-We tile the network layer by layer. On each layer, the *X_i* is used as input, with an initial padding token, and it spews out the last element of *Y_i* - Yep, reverse order exactly, see the symmetry of the architecture. We repeat the layer tiling until we encounter the padding token.
+We tile the network layer by layer. On each layer, the *X_i* are used as input, with an initial padding token, and it spews out an element of *Y_i* - Yep, reverse order exactly, see the symmetry of the architecture. We repeat the layer tiling until we encounter the padding token.
 
 
 ```
