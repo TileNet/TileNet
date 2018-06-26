@@ -78,7 +78,7 @@ We tile the network layer by layer. On each layer, the *X_i* are used as input, 
 **NOTE** Now our code contains only the numeral system conversion task(base 9 to base 10) as a demo. Refactor work to extend the code to support user-specified numeral system conversion and other tasks is still under construction.
 
 1. Run the `create_dataset.py` script, which will generate the `data/9-10.txt`, including a 4000-examples training set, 1000-examples validation set, and a 2000-examples test  set.
-2. Run the `tnn.py` to start training. The training incorporates random noise, so we validate on a random set on both train set and validation set on each iteration. The training will stop when the accuracy equals to `1.0`, as shown below:
+2. Run the `tnn.py` to start training. The training incorporates random noise, so we validate on a random set on both train set and validation set on each iteration. The training will stop when the accuracy equals to `1.0` and the average training loss is less than `0.005`, as shown below:
 
 ```
 training_set size:  4008
