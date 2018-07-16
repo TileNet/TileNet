@@ -4,7 +4,7 @@ Table of Contents
 =================
   * [Prerequisite](#prerequisite)
   * [Introduction](#introduction)
-  * [Features](#features)
+  * [Contributions](#contributions)
   * [Quickstart](#quickstart)
 
 
@@ -68,7 +68,7 @@ We tile the network layer by layer. On each layer, the *X_i* are used as input, 
                X_0         X_1       ...       X_(n-1)     X_n
 ```
 
-## Features
+## Contributions
 
  * With the proper use of the activation function, we effectively applied the concept of fixed-point attractor from Dynamical System theory to TileNet, efficiently preventing accumulation of errors when evaluating on extremely long sequences. Per the experiment, we achieved 100% accuracy even when testing sequences are 400 times longer than training examples.
  * We develped a [Haskell prototype](https://github.com/fracting/tnn_haskell) that is isomorphic to TileNet, successfully demonstrating and explaining the data flow and latent space of Deep Learning model from the point of view of pure functional programming, which might well inspire the future extension of TileNet.
@@ -148,6 +148,6 @@ Evaluate on testing_set
 > 6177767
 = 3299353
 < _______________________3299353
->
+
 ```
 
