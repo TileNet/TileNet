@@ -151,3 +151,7 @@ Evaluate on testing_set
 
 ```
 
+## Related research
+
+Nogueira, Jiang, Lin "Investigating the Limitations of Transformers with Simple Arithmetic Tasks", 2021
+https://github.com/castorini/transformers-arithmetic
